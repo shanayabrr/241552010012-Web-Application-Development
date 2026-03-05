@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descendant Selector</title>
+    <style>
+        /* DESCENDANT (spasi): level MANAPUN di dalam */
+        div p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Biru! </p>
+        <section>
+            <p>Biru Juga! </p>
+        </section>
+    </div>
+    <p>TIDAK biru (di luar div)</p>
+    
+</body>
+
+<!-- 
+
+<Attribute Selectors
+/* CSS: Attribute Selectors */
+/* Has any type attribute */
+input[type] { border: 1px solid gray; }
+/* Exact match */
+input[type="text"] { border: 2px solid blue; }
+input[type="email"] { border: 2px solid green; }
+input[type="password"] { border: 2px solid red; }
+/* Contains value */
+a[href*="google"] { color: orange; }
+/* Starts with */
+a[href^="https"] { color: green; } /* secure */
+a[href^="http"] { color: red; } /* not secure */
+/* Ends with */
+a[href$=".pdf"] { color: red; } /* PDF links */
+a[href$=".zip"] { color: purple; } /* ZIP links */
+
+HTML yang cocok:
+<These inputs get different borders> 
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Pass">
+<These links get different colors>
+<a href="https://google.com">Google</a>
+<a href="https://github.com">GitHub</a>
+<a href="http://old-site.com">Old Site</a>
+<File links> 
+<a href="report.pdf">Download PDF</a>
+<a href="files.zip">Download ZIP</a>
+
+Attribute Selectors>
+
+
+-->
+
+</html>
