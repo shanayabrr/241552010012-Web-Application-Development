@@ -1,0 +1,87 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+h1 {
+    color: #333;
+    font-size: 36px;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+}
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* CSS Syntax Structure 
+selector {
+property: value;
+property: value;
+}
+
+ Real Example: */
+
+/*h1 {
+color: blue;  / text color /
+font-size: 32px; / text size /
+font-weight: bold; / text weight /
+text-align: center; / alignment /
+margin-bottom: 20px; / space below /
+}/*
+
+/* selector = WHAT to style (h1)
+property = WHAT to change (color)
+value = WHAT to set (blue)
+{ } = declaration block
+; = end of each rule */
+
+
+/* Apply same style to multiple elements 
+h1, h2, h3 {
+color: navy;
+font-family: Arial, sans-serif;
+}
+
+ This is a single-line comment 
+
+This is a
+multi-line comment.
+Use comments to explain
+complex CSS rules.
+
+ You can comment out code: 
+p {
+color: red;
+font-size: 20px; -- disabled
+
+
+/ Named Colors /
+color: red; color: blue; color: green;
+/ Hexadecimal (#RRGGBB) /
+color: #FF0000; / Red (FF=255,00=0,00=0) /
+color: #00FF00; / Green /
+color: #333; / Short for #333333 (dark gray) /
+/ RGB (Red 0-255, Green 0-255, Blue 0-255) /
+color: rgb(255, 0, 0); / Red /
+color: rgb(100, 100, 100); / Gray /
+/ RGBA (with transparency 0.0 - 1.0) /
+color: rgba(255, 0, 0, 0.5); / 50% red /
+background: rgba(0, 0, 0, 0.3); / overlay /
+/ HSL (Hue 0-360, Saturation %, Lightness %) /
+color: hsl(0, 100%, 50%); / Red /
+color: hsl(120, 100%, 50%);/ Green /
+
+
+*/
