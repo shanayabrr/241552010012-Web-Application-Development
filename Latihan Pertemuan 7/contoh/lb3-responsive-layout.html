@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LB 3 - Responsive Layout</title>
+  <link rel="stylesheet" href="lb3-responsive-layout.css">
+</head>
+<body>
+  <h1>LB 3 — Responsive Layout</h1>
+  <p class="subtitle">Resize jendela browser untuk melihat perubahan breakpoint.</p>
+
+  <!-- SOAL 1 -->
+  <div class="soal">
+    <div class="soal-title">Soal 1 — Mobile First dengan Media Query</div>
+    <div class="soal-desc">
+      Buat grid card yang berubah jumlah kolomnya:
+      <strong>1 kolom</strong> (mobile) →
+      <strong>2 kolom</strong> (≥640px) →
+      <strong>4 kolom</strong> (≥1024px).
+    </div>
+    <div id="s1">
+      <div class="item">Produk 1</div>
+      <div class="item">Produk 2</div>
+      <div class="item">Produk 3</div>
+      <div class="item">Produk 4</div>
+      <div class="item">Produk 5</div>
+      <div class="item">Produk 6</div>
+      <div class="item">Produk 7</div>
+      <div class="item">Produk 8</div>
+    </div>
+    <details>
+      <summary>Lihat kunci jawaban</summary>
+      <pre>
+#s1 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  #s1 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  #s1 { grid-template-columns: repeat(4, 1fr); }
+}</pre>
+    </details>
+  </div>
+
+  <!-- SOAL 2 -->
+  <div class="soal">
+    <div class="soal-title">Soal 2 — auto-fit + minmax() (tanpa media query)</div>
+    <div class="soal-desc">
+      Gunakan <code>repeat(auto-fit, minmax(...))</code> agar kolom terbentuk otomatis.
+      Lebar minimum kolom <strong>180px</strong>, maksimum <strong>1fr</strong>.
+    </div>
+    <div id="s2">
+      <div class="item">Card A</div>
+      <div class="item">Card B</div>
+      <div class="item">Card C</div>
+      <div class="item">Card D</div>
+      <div class="item">Card E</div>
+    </div>
+    <details>
+      <summary>Lihat kunci jawaban</summary>
+      <pre>
+#s2 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}</pre>
+    </details>
+  </div>
+
+  <!-- SOAL 3 -->
+  <div class="soal">
+    <div class="soal-title">Soal 3 — Layout Artikel Responsif</div>
+    <div class="soal-desc">
+      Mobile: semua area tersusun vertikal.<br>
+      ≥768px: header atas, artikel (3fr) di kiri + iklan (1fr) di kanan, footer bawah.
+      Gunakan <code>grid-template-areas</code>.
+    </div>
+    <div id="s3">
+      <div class="header">Header</div>
+      <div class="artikel">Artikel</div>
+      <div class="iklan">Iklan</div>
+      <div class="footer">Footer</div>
+    </div>
+    <details>
+      <summary>Lihat kunci jawaban</summary>
+      <pre>
+/* Mobile */
+#s3 {
+  grid-template-areas:
+    "header"
+    "artikel"
+    "iklan"
+    "footer";
+  grid-template-columns: 1fr;
+}
+
+/* ≥768px */
+@media (min-width: 768px) {
+  #s3 {
+    grid-template-areas:
+      "header  header"
+      "artikel iklan"
+      "footer  footer";
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+#s3 .header  { grid-area: header; }
+#s3 .artikel { grid-area: artikel; }
+#s3 .iklan   { grid-area: iklan; }
+#s3 .footer  { grid-area: footer; }</pre>
+    </details>
+  </div>
+</body>
+</html>

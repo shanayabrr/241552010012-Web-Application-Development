@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 - Tata Letak Dashboard</title>
+  <link rel="stylesheet" href="05-dashboard.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Navbar -->
+    <nav class="nav">
+      <span class="logo"> Admin</span>
+      <span class="spacer"></span>
+      <span style="color:#94a3b8; font-size:.85rem;">Dashboard</span>
+      <div class="avatar">A</div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="menu-item active">📊 Dashboard</div>
+      <div class="menu-item active">🛒 Pesanan</div>
+      <div class="menu-item">📦 Produk</div>
+      <div class="menu-item">👥 Pelanggan</div>
+      <div class="menu-item">📈 Laporan</div>
+      <div class="menu-item">⚙️ Pengaturan</div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <h2>Selamat datang, Admin</h2>
+
+      <!-- Stat Cards -->
+      <div class="stat-cards">
+        <div class="stat">
+          <div class="label">Total Pesanan</div>
+          <div class="value" style="color:#38bdf8">1.248</div>
+          <div class="badge up">↑ 12% bulan ini</div>
+        </div>
+        <div class="stat">
+          <div class="label">Pendapatan</div>
+          <div class="value" style="color:#34d399">Rp 48jt</div>
+          <div class="badge up">↑ 8% bulan ini</div>
+        </div>
+        <div class="stat">
+          <div class="label">Pelanggan Baru</div>
+          <div class="value" style="color:#f59e0b">342</div>
+          <div class="badge down">↓ 3% bulan ini</div>
+        </div>
+        <div class="stat">
+          <div class="label">Retur</div>
+          <div class="value" style="color:#f87171">24</div>
+          <div class="badge down">↓ 2 dari bulan lalu</div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts">
+        <div class="chart-box">
+          <h3>Penjualan 7 Hari Terakhir</h3>
+          <div class="bar-chart">
+            <div class="bar" style="height:50%"><span>Sen</span></div>
+            <div class="bar" style="height:70%"><span>Sel</span></div>
+            <div class="bar" style="height:45%"><span>Rab</span></div>
+            <div class="bar" style="height:90%"><span>Kam</span></div>
+            <div class="bar" style="height:60%"><span>Jum</span></div>
+            <div class="bar" style="height:75%"><span>Sab</span></div>
+            <div class="bar" style="height:55%"><span>Min</span></div>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <h3>Kategori Produk</h3>
+          <div class="pie-mock"></div>
+          <div class="legend">
+            <div class="leg"><div class="leg-dot" style="background:#6366f1"></div> Sayur 40%</div>
+            <div class="leg"><div class="leg-dot" style="background:#34d399"></div> Buah 25%</div>
+            <div class="leg"><div class="leg-dot" style="background:#f59e0b"></div> Dairy 15%</div>
+            <div class="leg"><div class="leg-dot" style="background:#ef4444"></div> Lain 20%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabel Pesanan -->
+      <div class="table-box">
+        <h3>Pesanan Terbaru</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Pelanggan</th>
+              <th>Produk</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1042</td><td>Budi S.</td><td>Bayam, Wortel</td>
+              <td>Rp 45.000</td>
+              <td><span class="badge-status success">Selesai</span></td>
+            </tr>
+            <tr>
+              <td>#1043</td><td>Sari W.</td><td>Mangga, Jeruk</td>
+              <td>Rp 72.000</td>
+              <td><span class="badge-status pending">Diproses</span></td>
+            </tr>
+            <tr>
+              <td>#1044</td><td>Andi P.</td><td>Susu, Keju</td>
+              <td>Rp 98.000</td>
+              <td><span class="badge-status failed">Dibatalkan</span></td>
+            </tr>
+            <tr>
+              <td>#1045</td><td>Rini M.</td><td>Brokoli, Tomat</td>
+              <td>Rp 33.500</td>
+              <td><span class="badge-status success">Selesai</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      &copy; 2026  · Dashboard v1.0
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid — Daftar Contoh</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+    .container { max-width: 680px; width: 100%; }
+    h1 {
+      color: #f1f5f9;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    p.desc {
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+    }
+
+    .section-label {
+      color: #475569;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin: 24px 0 8px;
+    }
+
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    a.card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    a.card:hover { border-color: #6366f1; transform: translateY(-2px); }
+
+    .icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .card-text .title { color: #f1f5f9; font-weight: 600; font-size: 0.95rem; }
+    .card-text .sub   { color: #64748b; font-size: 0.78rem; margin-top: 2px; }
+
+    /* warna per topik */
+    .c1 { background: #312e81; }
+    .c2 { background: #3b0764; }
+    .c3 { background: #064e3b; }
+    .c4 { background: #450a0a; }
+    .c5 { background: #0c1a2e; border: 1px solid #1e3a5f; }
+    .lb { background: #422006; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Grid &amp; Responsive Design</h1>
+    <p class="desc">Klik kartu di bawah untuk membuka contoh atau latihan.</p>
+
+    <div class="section-label">Materi</div>
+    <div class="card-list">
+      <a class="card" href="01-grid-container.html">
+        <div class="icon c1">📦</div>
+        <div class="card-text">
+          <div class="title">01 — Properti Grid Container</div>
+          <div class="sub">columns, rows, gap, justify/align-items</div>
+        </div>
+      </a>
+      <a class="card" href="02-grid-item.html">
+        <div class="icon c2">🎯</div>
+        <div class="card-text">
+          <div class="title">02 — Properti Grid Item</div>
+          <div class="sub">column/row span, grid-area, self</div>
+        </div>
+      </a>
+      <a class="card" href="03-breakpoints-media-queries.html">
+        <div class="icon c3">📐</div>
+        <div class="card-text">
+          <div class="title">03 — Breakpoints &amp; Media Queries</div>
+          <div class="sub">mobile-first, desktop-first, layout blog</div>
+        </div>
+      </a>
+      <a class="card" href="04-autofit-minmax.html">
+        <div class="icon c4">🔄</div>
+        <div class="card-text">
+          <div class="title">04 — auto-fit &amp; minmax()</div>
+          <div class="sub">auto-fill vs auto-fit, card gallery</div>
+        </div>
+      </a>
+      <a class="card" href="05-dashboard.html">
+        <div class="icon c5">🖥</div>
+        <div class="card-text">
+          <div class="title">05 — Tata Letak Dashboard</div>
+          <div class="sub">nav + sidebar + main + footer</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="section-label">Latihan (LB)</div>
+    <div class="card-list">
+      <a class="card" href="lb1-grid-dasar.html">
+        <div class="icon lb">✏️</div>
+        <div class="card-text">
+          <div class="title">LB 1 — Grid Dasar</div>
+          <div class="sub">columns, rows, justify-items</div>
+        </div>
+      </a>
+      <a class="card" href="lb2-grid-item-placement.html">
+        <div class="icon lb">✏️</div>
+        <div class="card-text">
+          <div class="title">LB 2 — Penempatan Item</div>
+          <div class="sub">span kolom/baris, grid-template-areas</div>
+        </div>
+      </a>
+      <a class="card" href="lb3-responsive-layout.html">
+        <div class="icon lb">✏️</div>
+        <div class="card-text">
+          <div class="title">LB 3 — Responsive Layout</div>
+          <div class="sub">media query, auto-fit, artikel layout</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LB 1 - Grid Dasar</title>
+  <link rel="stylesheet" href="lb1-grid-dasar.css">
+</head>
+<body>
+  <h1>LB 1 — Grid Dasar</h1>
+  <p class="subtitle">Lengkapi bagian CSS yang bertanda <code>TODO</code> agar tampilan sesuai deskripsi.</p>
+
+  <!-- ── SOAL 1 ── -->
+  <div class="soal">
+    <div class="soal-title">Soal 1 — 3 Kolom Sama Lebar</div>
+    <div class="soal-desc">
+      Tambahkan <code>grid-template-columns</code> agar terbentuk <strong>3 kolom sama lebar</strong>,
+      dan <code>gap: 16px</code>.
+    </div>
+    <div id="soal1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <details>
+      <summary>Lihat kunci jawaban</summary>
+      <pre>
+#soal1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+      </pre>
+    </details>
+  </div>
+
+  <!-- ── SOAL 2 ── -->
+  <div class="soal">
+    <div class="soal-title">Soal 2 — Tinggi Baris Tetap 80px</div>
+    <div class="soal-desc">
+      Grid sudah punya <strong>4 kolom</strong>. Tambahkan <code>grid-template-rows</code>
+      agar setiap baris memiliki tinggi tetap <strong>80px</strong>.
+    </div>
+    <div id="soal2">
+      <div class="item">A</div><div class="item">B</div>
+      <div class="item">C</div><div class="item">D</div>
+      <div class="item">E</div><div class="item">F</div>
+      <div class="item">G</div><div class="item">H</div>
+    </div>
+    <details>
+      <summary>Lihat kunci jawaban</summary>
+      <pre>
+#soal2 {
+  grid-template-rows: repeat(2, 80px);
+}
+      </pre>
+    </details>
+  </div>
+
+  <!-- ── SOAL 3 ── -->
+  <div class="soal">
+    <div class="soal-title">Soal 3 — justify-items: center</div>
+    <div class="soal-desc">
+      Grid sudah punya <strong>3 kolom</strong>. Item memiliki lebar <strong>80px</strong>.
+      Tambahkan <code>justify-items</code> agar item rata tengah di dalam selnya.
+    </div>
+    <div id="soal3">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    <details>
+      <summary>Lihat kunci jawaban</summary>
+      <pre>
+#soal3 {
+  justify-items: center;
+}
+      </pre>
+    </details>
+  </div>
+</body>
+</html>

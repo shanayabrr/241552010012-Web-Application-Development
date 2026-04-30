@@ -1,0 +1,63 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; padding: 24px; background: #f8fafc; color: #1e293b; }
+
+h1 { text-align: center; margin-bottom: 4px; font-size: 1.5rem; }
+.subtitle { text-align: center; color: #64748b; font-size: 0.9rem; margin-bottom: 32px; }
+
+.soal { margin-bottom: 48px; }
+.soal-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; color: #f59e0b; }
+.soal-desc  { font-size: 0.85rem; color: #475569; margin-bottom: 12px; }
+
+/* Grid dasar semua soal */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  gap: 8px;
+}
+
+/* ── Warna item ── */
+.item {
+  background: #94a3b8;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* SOAL 1: item A melintasi 3 kolom */
+#s1 .A {
+  background: #f59e0b;
+  /* TODO: grid-column agar A menempati kolom 1 sampai 4 (span 3 kolom) */
+}
+
+/* SOAL 2: item B melintasi 2 baris */
+#s2 .B {
+  background: #10b981;
+  /* TODO: grid-row agar B menempati baris 1 sampai 3 (span 2 baris) */
+}
+
+/* SOAL 3: gunakan grid-template-areas */
+#s3 {
+  grid-template-rows: 60px 1fr 48px;
+  /* TODO: grid-template-areas dengan layout:
+     header  header  header  header
+     sidebar content content content
+     footer  footer  footer  footer
+  */
+}
+#s3 .header  { /* TODO: grid-area: header;  */ background: #6366f1; }
+#s3 .sidebar { /* TODO: grid-area: sidebar; */ background: #8b5cf6; }
+#s3 .content { /* TODO: grid-area: content; */ background: #0ea5e9; }
+#s3 .footer  { /* TODO: grid-area: footer;  */ background: #f97316; }
+
+/* kunci jawaban styling */
+details { margin-top: 12px; }
+summary { cursor: pointer; color: #f59e0b; font-size: 0.85rem; font-weight: 600; user-select: none; }
+details pre {
+  background: #1e293b; color: #a5f3fc;
+  padding: 12px; border-radius: 6px;
+  font-size: 0.82rem; margin-top: 8px; white-space: pre-wrap;
+}

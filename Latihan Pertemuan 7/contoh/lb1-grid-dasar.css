@@ -1,0 +1,83 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; padding: 24px; background: #f8fafc; color: #1e293b; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 4px;
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+.soal { margin-bottom: 40px; }
+.soal-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #6366f1;
+}
+.soal-desc {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+/* TODO siswa: isi properti CSS di sini */
+#soal1 {
+  display: grid;
+  /* TODO: grid-template-columns 3 kolom sama lebar */
+  /* TODO: gap 16px */
+}
+
+/* TODO siswa: isi properti CSS di sini */
+#soal2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  /* TODO: buat tinggi baris 80px menggunakan grid-template-rows */
+}
+
+/* TODO siswa: isi properti CSS di sini */
+#soal3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  /* TODO: pusatkan item secara horizontal dengan justify-items */
+}
+
+/* Item bawaan (jangan diubah) */
+.item {
+  background: #6366f1;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.item:nth-child(even) { background: #8b5cf6; }
+#soal3 .item { width: 80px; }
+
+/* ── Kunci Jawaban (hidden default) ── */
+details { margin-top: 12px; }
+summary {
+  cursor: pointer;
+  color: #6366f1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  user-select: none;
+}
+details pre {
+  background: #1e293b;
+  color: #a5f3fc;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  margin-top: 8px;
+  white-space: pre-wrap;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 - auto-fit & minmax()</title>
+  <link rel="stylesheet" href="04-autofit-minmax.css">
+</head>
+<body>
+  <h1>04 — Grid Lanjutan: auto-fit &amp; minmax()</h1>
+
+  <h2>1. auto-fill — tetap buat kolom kosong</h2>
+  <p class="kode">grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));</p>
+  <p class="note">auto-fill: kolom "hantu" tetap ada meski tidak ada item. Lebar bisa lebih kecil dari 1fr.</p>
+  <div class="demo-fill">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+
+  <h2>2. auto-fit — item mengembang mengisi ruang</h2>
+  <p class="kode">grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));</p>
+  <p class="note">auto-fit: kolom kosong dilipat, item yang ada mengembang mengisi lebar penuh.</p>
+  <div class="demo-fit">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+  </div>
+
+  <h2>3. minmax(min, max) — kolom punya batas lebar</h2>
+  <p class="kode">grid-template-columns: minmax(100px, 250px)  1fr  minmax(80px, 200px);</p>
+  <div class="demo-minmax">
+    <div class="item">min 100 / max 250</div>
+    <div class="item">1fr</div>
+    <div class="item">min 80 / max 200</div>
+  </div>
+
+  <h2>4. Gallery kartu — responsif tanpa media query</h2>
+  <p class="kode">grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</p>
+  <div class="demo-gallery">
+    <div class="card">
+      <div class="card-img">🛒</div>
+      <div class="card-body"><h3>Produk A</h3><p>Deskripsi singkat produk.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img">🍎</div>
+      <div class="card-body"><h3>Produk B</h3><p>Deskripsi singkat produk.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img">🥦</div>
+      <div class="card-body"><h3>Produk C</h3><p>Deskripsi singkat produk.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img">🥛</div>
+      <div class="card-body"><h3>Produk D</h3><p>Deskripsi singkat produk.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img">🍞</div>
+      <div class="card-body"><h3>Produk E</h3><p>Deskripsi singkat produk.</p></div>
+    </div>
+  </div>
+
+  <h2>5. min() — max kolom agar tidak lebih besar dari layar</h2>
+  <p class="kode">grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));</p>
+  <p class="note">Trik: min(100%, 240px) mencegah overflow pada layar sangat sempit.</p>
+  <div class="demo-max">
+    <div class="item">A</div><div class="item">B</div>
+    <div class="item">C</div><div class="item">D</div>
+  </div>
+</body>
+</html>

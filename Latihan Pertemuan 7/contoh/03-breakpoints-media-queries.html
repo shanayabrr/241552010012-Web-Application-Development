@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 - Breakpoints & Media Queries</title>
+  <link rel="stylesheet" href="03-breakpoints-media-queries.css">
+</head>
+<body>
+  <h1>03 — Breakpoints &amp; Media Queries</h1>
+
+  <div class="bp-info"></div>
+
+  <h2>1. Mobile First — tambah kolom seiring layar melebar</h2>
+  <p class="kode">/* default: 1 kolom */
+grid-template-columns: 1fr;
+
+@media (min-width: 640px)  { grid-template-columns: repeat(2,1fr); }
+@media (min-width: 768px)  { grid-template-columns: repeat(3,1fr); }
+@media (min-width: 1024px) { grid-template-columns: repeat(4,1fr); }</p>
+  <div class="demo-mobile-first">
+    <div class="item">1</div><div class="item">2</div>
+    <div class="item">3</div><div class="item">4</div>
+    <div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+
+  <h2>2. Desktop First — kurangi kolom seiring layar menyempit</h2>
+  <p class="kode">/* default: 4 kolom */
+grid-template-columns: repeat(4,1fr);
+
+@media (max-width: 1023px) { grid-template-columns: repeat(3,1fr); }
+@media (max-width: 767px)  { grid-template-columns: repeat(2,1fr); }
+@media (max-width: 639px)  { grid-template-columns: 1fr; }</p>
+  <div class="demo-desktop-first">
+    <div class="item">1</div><div class="item">2</div>
+    <div class="item">3</div><div class="item">4</div>
+    <div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+
+  <h2>3. Layout Blog responsif dengan grid-template-areas</h2>
+  <p class="kode">/* mobile: 1 kolom, stacked */
+grid-template-areas: "header" "content" "sidebar" "footer";
+
+/* ≥768px: sidebar di kiri, content di kanan */
+@media (min-width: 768px) {
+  grid-template-areas:
+    "header  header"
+    "sidebar content"
+    "footer  footer";
+  grid-template-columns: 200px 1fr;
+}</p>
+  <div class="demo-blog">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Content</div>
+    <div class="footer">Footer</div>
+  </div>
+</body>
+</html>

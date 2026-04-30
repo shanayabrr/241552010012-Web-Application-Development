@@ -1,0 +1,57 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; padding: 16px; background: #f8fafc; color: #1e293b; font-size: 14px; }
+
+h1 { font-size: 1.1rem; margin-bottom: 4px; }
+.subtitle { color: #64748b; font-size: 0.8rem; margin-bottom: 6px; }
+
+.soal { margin-bottom: 28px; }
+.soal-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; color: #10b981; }
+.soal-desc  { font-size: 0.8rem; color: #475569; margin-bottom: 8px; }
+
+/* ── item: teks biasa dengan border tipis ── */
+.item {
+  border: 1px solid #cbd5e1;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.8rem;
+  background: #fff;
+}
+
+/* SOAL 1 */
+#s1 {
+  display: grid;
+  gap: 6px;
+  /* TODO: grid-template-columns 1 kolom (mobile first) */
+}
+/* TODO: @media ≥640px  → 2 kolom */
+/* TODO: @media ≥1024px → 4 kolom */
+
+/* SOAL 2 */
+#s2 {
+  display: grid;
+  gap: 6px;
+  /* TODO: grid-template-columns pakai repeat(auto-fit, minmax(...)) */
+}
+
+/* SOAL 3 */
+#s3 {
+  display: grid;
+  gap: 6px;
+  /* TODO: grid-template-areas mobile */
+  /* TODO: grid-template-columns mobile */
+}
+/* TODO: @media ≥768px → ubah areas & columns */
+
+#s3 .header  { border: 1px solid #6366f1; padding: 8px; text-align: center; font-size: 0.8rem; /* TODO: grid-area: header;  */ }
+#s3 .artikel { border: 1px solid #10b981; padding: 8px; font-size: 0.8rem; min-height: 60px;  /* TODO: grid-area: artikel; */ }
+#s3 .iklan   { border: 1px solid #f59e0b; padding: 8px; font-size: 0.8rem; min-height: 60px;  /* TODO: grid-area: iklan;   */ }
+#s3 .footer  { border: 1px solid #475569; padding: 8px; text-align: center; font-size: 0.8rem; /* TODO: grid-area: footer;  */ }
+
+/* ── kunci jawaban ── */
+details { margin-top: 8px; }
+summary { cursor: pointer; color: #10b981; font-size: 0.8rem; font-weight: 600; user-select: none; }
+details pre {
+  background: #1e293b; color: #a5f3fc;
+  padding: 10px; border-radius: 4px;
+  font-size: 0.76rem; margin-top: 6px; white-space: pre-wrap;
+}
