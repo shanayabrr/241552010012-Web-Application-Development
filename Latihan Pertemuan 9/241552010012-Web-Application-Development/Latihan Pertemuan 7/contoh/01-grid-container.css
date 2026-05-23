@@ -1,0 +1,64 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; padding: 24px; background: #f0f4f8; }
+h1 { margin-bottom: 8px; font-size: 1.4rem; color: #1e293b; }
+h2 { margin: 32px 0 8px; font-size: 1rem; color: #475569; border-left: 4px solid #6366f1; padding-left: 8px; }
+p.kode { background: #1e293b; color: #a5f3fc; padding: 8px 12px; border-radius: 6px; font-size: 0.82rem; margin-bottom: 12px; font-family: monospace; }
+
+.item {
+  background: #6366f1;
+  color: white;
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+.item:nth-child(even) { background: #8b5cf6; }
+
+/* ── 1. display:grid + grid-template-columns ── */
+.demo-cols {
+  display: grid;
+  grid-template-columns: 200px 1fr 2fr;
+  gap: 8px;
+}
+
+/* ── 2. grid-template-rows ── */
+.demo-rows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px 120px;
+  gap: 8px;
+}
+
+/* ── 3. gap / column-gap / row-gap ── */
+.demo-gap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  row-gap: 8px;
+}
+
+/* ── 4. justify-items ── */
+.demo-justify {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 8px;
+}
+.demo-justify .item { width: 80px; }
+
+/* ── 5. align-items ── */
+.demo-align {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 8px;
+  height: 120px;
+}
+
+/* ── 6. justify-content ── */
+.demo-jcontent {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: space-between;
+  gap: 8px;
+}

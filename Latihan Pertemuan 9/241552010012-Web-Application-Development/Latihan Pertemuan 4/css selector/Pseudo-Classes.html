@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pseudo Class - Hover</title>
+    <style>
+        .hover:hover{
+            color: red;
+            text-decoration: underline;
+        }
+        .active:active{
+            color: rgb(21, 0, 255);
+            text-decoration: underline;
+        }
+        input:focus {
+            border: 2px solid blue;
+            background-color: #f0f8ff;
+        }
+        .link:visited {
+            color: rgb(253, 0, 0);
+        }
+        .quote::before {
+            content: open-quote;
+            font-size: 2em;
+            color: gray;
+        }
+        .quote::after {
+            content: close-quote;
+            font-size: 2em; 
+            color: gray;
+        }
+        p.article::first-letter {
+            font-size: 3em;
+            float: left;
+            margin-right: 8px;
+            color: navy;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Pseudo-Classes: Styling Berdasarkan Status Elemen-->
+    <a href="#" class="hover">Arahkan mouse ke sini</a>
+    <hr>
+    <a href="#" class="active">klik mouse ke sini</a>
+    <hr>
+    <!--Pseudo-Classes: Styling Berdasarkan Status Elemen-->
+    <hr>
+    <input type="text" placeholder="Klik di sini">
+    <hr>
+    <a href="https://google.com" class="link">Kunjungi Google</a>
+    <hr>
+    <!--Pseudo-Classes: Styling Berdasarkan Status Elemen-->
+    <h2>Contoh Quote</h2>
+    <p class="quote">CSS bisa menambahkan konten tanpa mengubah HTML.</p>
+    <hr>
+    <p class="article">
+        CSS adalah bahasa untuk mengatur tampilan halaman web agar lebih menarik dan profesional.
+    </p>
+</body>
+
+<!-- 
+-----------------------------------------------------------
+<Pseudo-Classes: Styling Berdasarkan Status Elemen
+
+Interactive States:(
+/* Link States (order: L-V-H-A) */
+a:link { color: blue; } /* unvisited */
+a:visited { color: purple; } /* visited */
+a:hover { color: red; } /* mouse over */
+a:active { color: orange; } /* being clicked */
+/* Button hover effect */
+.btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+transition: 0.3s; /* smooth! */
+}
+.btn:hover {
+background: #388E3C; /* darker green */
+transform: scale(1.05); /* slightly bigger */
+}
+/* Form input states */
+input:focus { border: 2px solid blue; outline: none; }
+input:disabled { background: #eee; opacity: 0.6; }
+input:required { border-left: 4px solid red; }
+
+Pseudo-Classes: Styling Berdasarkan Status Elemen>
+)
+
+Position-Based:(
+    /* First, Last, Nth child */
+    li:first-child { font-weight: bold; }
+    li:last-child { border-bottom: none; }
+    li:nth-child(2) { color: red; } /* 2nd item */
+    /* Zebra-striped table rows */
+    tr:nth-child(odd) { background: #f5f5f5; }
+    tr:nth-child(even) { background: #ffffff; }
+    < HTML >
+    <ul>
+        <li>First (bold)</li>
+        <li>Second (red)</li>
+        <li>Third</li>
+        <li>Last (no border-bottom)</li>
+    </ul>
+    /* Exclusion */
+    p:not(.intro) { color: gray; }
+/* All <p> EXCEPT those with class="intro" */
+/* Empty elements */
+div:empty { display: none; }
+)>
+-----------------------------------------------------------------------
+<Pseudo-Elements: Styling Bagian dari Elemen
+/* ::before and ::after - add content */
+.quote::before { content: open-quote; font-size: 2em; }
+.quote::after { content: close-quote; font-size: 2em; }
+/* Required field indicator */
+.required::after {
+content: " *";
+color: red;
+font-weight: bold;
+}
+<- HTML ->
+<label class="required">Email</label>
+<- Displays: Email * (red asterisk) ->
+/* Drop cap - large first letter */
+p.article::first-letter {
+font-size: 3em;
+float: left;
+margin-right: 8px;
+color: navy;
+font-weight: bold;
+}
+/* Style first line only */
+p.article::first-line {
+font-weight: bold;
+color: #333;
+}
+
+/* Custom text selection color */
+::selection {
+background-color: #FFEB3B;
+color: black;
+}
+/* When user highlights text, it
+shows yellow bg instead of blue */
+/* Placeholder text styling */
+input::placeholder {
+color: #999;
+font-style: italic;
+}
+< HTML >
+<input type="text"
+placeholder="Enter your name...">
+< "Enter your name..." appears
+in italic gray >
+/* Pseudo-CLASS vs Pseudo-ELEMENT */
+:hover /* STATE (single :) */
+::before /* PART (double ::) */
+:first-child /* STATE (single :) */
+::first-line /* PART (double ::) */
+>
+--------------------------------------------------------------------
+
+
+
+
+-->
+</html>

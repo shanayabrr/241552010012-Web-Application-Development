@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 4 - Project Gallery & Media</title>
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; margin: 0; color: #34495e; }
+        
+        /* Navigasi Cool Tone */
+        nav { background: #1a3a5f; padding: 15px; text-align: center; position: sticky; top: 0; }
+        nav a { color: #dff9fb; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: white; border-bottom: 2px solid white; }
+
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        h2 { color: #1a3a5f; text-align: center; margin-top: 40px; }
+
+        /* Layout Galeri */
+        .gallery-grid { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        figure { 
+            background: white; 
+            padding: 15px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            width: 400px; 
+            margin: 10px 0;
+        }
+        img { width: 100%; border-radius: 5px; height: 250px; object-fit: cover; }
+        figcaption { text-align: center; margin-top: 10px; font-weight: bold; color: #486581; }
+
+        .video-container { text-align: center; background: white; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        .footer-link { text-align: center; margin-top: 50px; padding: 20px; background: #eef2f7; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="latihan1.html">Profil</a>
+        <a href="latihan2.html">Pendidikan</a>
+        <a href="latihan3_akademik.html">Akademik</a>
+        <a href="#galeri">Galeri Proyek</a>
+    </nav>
+
+    <div class="container" id="galeri">
+        <h2>Portfolio Showcase</h2>
+        
+        <div class="gallery-grid">
+            <figure>
+                <img src="jay.jpg" alt="Sistem Informasi PIK-R">
+                <figcaption></figcaption>
+            </figure>
+
+            <a href="#" title="Klik untuk baca paper">
+                <figure>
+                    <img src="jay2.jpg" alt="IEEE 754 Paper Study">
+                    <figcaption></figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <h2>Video Demo / Presentation</h2>
+        <div class="video-container">
+            <video width="600" controls>
+                <source src="jay3.mp4" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+            <p><em></em></p>
+        </div>
+    </div>
+
+    <div class="footer-link">
+        <h3>Hubungi Saya untuk Kolaborasi</h3>
+        <p>Email: <a href="mailto:shnyablqsr@gmail.com" class="highlight">shnyablqsr@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/balghisrr" target="_blank">@balghisrr</a></p>
+    </div>
+
+</body>
+</html>

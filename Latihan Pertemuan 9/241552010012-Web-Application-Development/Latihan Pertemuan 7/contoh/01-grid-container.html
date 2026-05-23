@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 - Properti Grid Container</title>
+  <link rel="stylesheet" href="01-grid-container.css">
+</head>
+<body>
+  <h1>01 — Properti Grid Container</h1>
+
+  <h2>1. display: grid + grid-template-columns: 200px 1fr 2fr</h2>
+  <p class="kode">grid-template-columns: 200px 1fr 2fr;</p>
+  <div class="demo-cols">
+    <div class="item">200px</div>
+    <div class="item">1fr</div>
+    <div class="item">2fr</div>
+  </div>
+
+  <h2>2. grid-template-rows: 80px 120px</h2>
+  <p class="kode">grid-template-rows: 80px 120px;</p>
+  <div class="demo-rows">
+    <div class="item">A</div><div class="item">B</div><div class="item">C</div>
+    <div class="item">D</div><div class="item">E</div><div class="item">F</div>
+  </div>
+
+  <h2>3. column-gap: 24px  /  row-gap: 8px</h2>
+  <p class="kode">column-gap: 24px; row-gap: 8px;</p>
+  <div class="demo-gap">
+    <div class="item">1</div><div class="item">2</div>
+    <div class="item">3</div><div class="item">4</div>
+    <div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div>
+  </div>
+
+  <h2>4. justify-items: center</h2>
+  <p class="kode">justify-items: center;</p>
+  <div class="demo-justify">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2>5. align-items: end  (container height: 120px)</h2>
+  <p class="kode">align-items: end;</p>
+  <div class="demo-align">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2>6. justify-content: space-between  (kolom lebar tetap 100px)</h2>
+  <p class="kode">grid-template-columns: repeat(3, 100px); justify-content: space-between;</p>
+  <div class="demo-jcontent">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+</body>
+</html>

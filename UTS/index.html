@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TazkiaTech</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f6f7fb;
+    color:#111827;
+}
+
+/* NAVBAR */
+header{
+    width:100%;
+    background:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#4f46e5;
+}
+
+nav{
+    display:flex;
+    gap:32px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111827;
+    font-size:14px;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#4f46e5;
+}
+
+/* HERO */
+.hero{
+    min-height:92vh;
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    color:white;
+    font-size:70px;
+    font-weight:800;
+    max-width:1000px;
+    line-height:1.15;
+}
+
+.hero span{
+    color:#ffd54a;
+}
+
+.hero p{
+    color:#e5e7eb;
+    margin-top:20px;
+    max-width:700px;
+    font-size:18px;
+}
+
+.hero-btn{
+    margin-top:40px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 32px;
+    border-radius:50px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+    transition:.3s;
+}
+
+.primary{
+    background:white;
+    color:#4f46e5;
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+}
+
+.secondary{
+    background:transparent;
+    border:2px solid white;
+    color:white;
+}
+
+.secondary:hover{
+    background:white;
+    color:#4f46e5;
+}
+
+/* SECTION */
+section{
+    padding:90px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title h2{
+    font-size:44px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.about h3{
+    color:#4f46e5;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#4b5563;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* SERVICES */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.04);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card .icon{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#6b7280;
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* STATS */
+.stats{
+    background:linear-gradient(135deg,#4f46e5,#4338ca);
+    color:white;
+    padding:65px 7%;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+    gap:30px;
+}
+
+.stats h2{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+/* TEAM */
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.team{
+    background:white;
+    padding:35px 25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.04);
+}
+
+.team img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:auto;
+    border:3px solid #4f46e5;
+}
+
+.team h3{
+    margin-top:18px;
+    font-size:22px;
+}
+
+.team span{
+    color:#4f46e5;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* CONTACT */
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:start;
+}
+
+.form{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.04);
+}
+
+input,textarea,select{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:'Poppins',sans-serif;
+}
+
+textarea{
+    height:130px;
+    resize:none;
+}
+
+.form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#4f46e5;
+    color:white;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#07122c;
+    color:white;
+    padding:70px 7% 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer a{
+    display:block;
+    color:#d1d5db;
+    text-decoration:none;
+    margin-bottom:10px;
+}
+
+.copy{
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:50px;
+    padding-top:20px;
+    text-align:center;
+    color:#9ca3af;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+.about,
+.contact,
+.grid,
+.team-grid,
+.stats-grid,
+.footer-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+    font-size:54px;
+}
+}
+
+@media(max-width:768px){
+
+nav{
+    display:none;
+}
+
+.about,
+.contact,
+.grid,
+.team-grid,
+.stats-grid,
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.title h2{
+    font-size:32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Tazkia<span>Tech</span></div>
+<nav>
+<a href="#">Beranda</a>
+<a href="#">Tentang</a>
+<a href="#">Layanan</a>
+<a href="#">Tim</a>
+<a href="#">Kontak</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Kami Membangun Solusi <span>Digital</span></h1>
+<p>TazkiaTech adalah perusahaan perangkat lunak yang membantu bisnis berkembang melalui teknologi modern</p>
+
+<div class="hero-btn">
+<button class="btn primary">Hubungi Kami</button>
+<button class="btn secondary">Layanan Kami</button>
+</div>
+</section>
+
+<section>
+<div class="title">
+<h2>Tentang Kami</h2>
+<p>Mengenal lebih dekat TazkiaTech dan perjalanan kami.</p>
+</div>
+
+<div class="about">
+<img src="https://picsum.photos/600/450">
+<div>
+<h3>KISAH KAMI</h3>
+<h2>Dari Ide Kecil Menuju Panggung Global</h2>
+<p>Didirikan tahun 2018, kami berkembang dari tim kecil menjadi perusahaan digital terpercaya dengan klien internasional.</p>
+<p>Kami percaya software hebat dibangun melalui komunikasi jelas, proses transparan, dan inovasi berkelanjutan.</p>
+<ul>
+          <li>Good design over flashy design</li>
+        <li>Simple code over clever code</li>
+        <li>Happy users over happy managers</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<div class="title">
+<h2>Apa yang Kami Lakukan</h2>
+<p>Layanan digital menyeluruh sesuai kebutuhan bisnis Anda.</p>
+</div>
+
+<div class="grid">
+<div class="card"><div class="icon">🌐</div><h3>Web Development</h3><p>Website modern cepat dan responsif.</p></div>
+<div class="card"><div class="icon">📱</div><h3>Mobile App</h3><p>Aplikasi Android & iOS profesional.</p></div>
+<div class="card"><div class="icon">☁️</div><h3>Cloud DevOps</h3><p>Infrastructure scalable modern.</p></div>
+<div class="card"><div class="icon">🎨</div><h3>UI/UX Design</h3><p>Desain elegan dan user friendly.</p></div>
+<div class="card"><div class="icon">🔒</div><h3>Cyber Security</h3><p>Keamanan data perusahaan Anda.</p></div>
+<div class="card"><div class="icon">📊</div><h3>Analytics</h3><p>Data menjadi keputusan bisnis.</p></div>
+</div>
+</section>
+
+<section class="stats">
+<div class="stats-grid">
+<div><h2>100+</h2><p>Proyek Selesai</p></div>
+<div><h2>40+</h2><p>Anggota Tim</p></div>
+<div><h2>12</h2><p>Negara</p></div>
+<div><h2>98%</h2><p>Kepuasan Klien</p></div>
+</div>
+</section>
+
+<section>
+<div class="title">
+<h2>Kenali Tim Kami</h2>
+<p>Orang hebat di balik baris kode.</p>
+</div>
+
+<div class="team-grid">
+<div class="team"><img src="https://picsum.photos/200?1"><h3>Sari</h3><span>CEO</span></div>
+<div class="team"><img src="https://picsum.photos/200?2"><h3>Markus</h3><span>CTO</span></div>
+<div class="team"><img src="https://picsum.photos/200?3"><h3>Aisha</h3><span>Designer</span></div>
+<div class="team"><img src="https://picsum.photos/200?4"><h3>Reza</h3><span>Engineer</span></div>
+</div>
+</section>
+
+<section>
+<div class="contact">
+<div>
+<h2 style="font-size:44px;margin-bottom:20px;">Hubungi Kami</h2>
+<p style="color:#6b7280;">Punya proyek? Isi formulir dan kami akan menghubungi Anda.</p>
+</div>
+
+<div class="form">
+<input type="text" placeholder="Nama Lengkap">
+<input type="email" placeholder="Alamat Email">
+<select><option>Pilih layanan</option></select>
+<textarea placeholder="Pesan Anda"></textarea>
+<button>Kirim Pesan</button>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h2 class="logo">Tazkia<span>Tech</span></h2>
+<p>Membangun masa depan, satu baris kode pada satu waktu.</p>
+</div>
+
+<div>
+<h3>Perusahaan</h3>
+<a href="#">Tentang</a>
+<a href="#">Layanan</a>
+<a href="#">Tim</a>
+</div>
+
+<div>
+<h3>Ikuti Kami</h3>
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">Twitter</a>
+</div>
+</div>
+
+<div class="copy">© 2025 TazkiaTech. Seluruh hak cipta dilindungi.</div>
+</footer>
+
+</body>
+</html>
