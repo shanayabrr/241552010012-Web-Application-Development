@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+:root {
+    --bg-color: #eef1f6; --text-color: #2b2d42; --card-bg: #ffffff;
+    --border-main: 4px solid #2b2d42; --box-shadow: 0 8px 0px #cbd5e1;
+    --accent: #ff477e; --success: #38b000; --error: #ff595e;
+}
+[data-theme="dark"] {
+    --bg-color: #1a1a2e; --text-color: #f8f9fa; --card-bg: #16213e;
+    --border-main: 4px solid #f8f9fa; --box-shadow: 0 8px 0px #0f0f1a;
+    --accent: #ff006e; --success: #00f5d4; --error: #ff4d6d;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Fredoka', sans-serif; }
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; justify-content: center; align-items: center; height: 100vh; padding: 20px; }
+
+.form-wrapper { width: 100%; max-width: 500px; }
+.game-header { display: flex; justify-content: space-between; align-items: center; }
+.game-header h1 { font-size: 1.3rem; }
+.game-desc { font-size: 0.85rem; opacity: 0.7; margin-bottom: 25px; font-weight: bold; color: var(--accent); }
+
+.game-btn { padding: 10px 20px; font-weight: 700; border: 3px solid #2b2d42; border-radius: 12px; background: #ffbe0b; cursor: pointer; box-shadow: 0 4px 0 #2b2d42; }
+[data-theme="dark"] .game-btn { border-color: #f8f9fa; box-shadow: 0 4px 0 #f8f9fa; }
+
+.game-card { background: var(--card-bg); border: var(--border-main); border-radius: 24px; padding: 30px; box-shadow: var(--box-shadow); }
+.form-group { margin-bottom: 15px; }
+label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 5px; }
+input { width: 100%; padding: 10px 15px; border: 3px solid #2b2d42; border-radius: 12px; font-weight: bold; background: var(--bg-color); color: var(--text-color); outline: none; }
+[data-theme="dark"] input { border-color: #f8f9fa; }
+
+.error { color: var(--error); font-size: 0.75rem; font-weight: bold; display: block; margin-top: 3px; min-height: 15px; }
+
+/* HEALTH BAR RPG STYLE */
+.strength-container { height: 8px; border: 2px solid #2b2d42; border-radius: 4px; margin-top: 5px; overflow: hidden; background: #e2e8f0; }
+[data-theme="dark"] .strength-container { border-color: #f8f9fa; }
+#strength-bar { height: 100%; width: 0%; transition: width 0.3s, background-color 0.3s; }
+
+.submit-game-btn { width: 100%; padding: 12px; background: var(--accent); color: white; font-weight: 700; border: 3px solid #2b2d42; border-radius: 12px; cursor: pointer; box-shadow: 0 5px 0 #2b2d42; margin-top: 10px; }
+[data-theme="dark"] .submit-game-btn { border-color: #f8f9fa; box-shadow: 0 5px 0 #f8f9fa; }
+.submit-game-btn:active { transform: translateY(5px); box-shadow: none; }
+
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+.shake { animation: shake 0.3s ease-in-out; }

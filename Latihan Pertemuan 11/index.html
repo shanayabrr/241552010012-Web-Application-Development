@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game board adventure - tugas mandiri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="board-wrapper">
+        
+        <header class="game-header">
+            <h1>🎲 board game adventure</h1>
+            <button id="theme-btn" class="game-btn">siang ☀️</button>
+        </header>
+        <p class="game-desc">tugas mandiri: gabungan komponen ui interaktif dan validasi form</p>
+
+        <nav class="tab-nav">
+            <button class="tombol-tab aktif" data-tab="panel-statistik">汇 statistik</button>
+            <button class="tombol-tab" data-tab="panel-faq">📜 kitab faq</button>
+            <button class="tombol-tab" data-tab="panel-registrasi">⚔️ registrasi hero</button>
+        </nav>
+
+        <section id="panel-statistik" class="panel aktif">
+            <div class="grid-statistik">
+                <div class="kartu-stat" data-target="1200">
+                    <span class="emoji">🍓</span>
+                    <h3 class="penghitung">0</h3>
+                    <p>hero terdaftar</p>
+                </div>
+                <div class="kartu-stat" data-target="850">
+                    <span class="emoji">🍦</span>
+                    <h3 class="penghitung">0</h3>
+                    <p>piala liga</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="panel-faq" class="panel">
+            <div class="accordion-container">
+                <div class="item-akordion">
+                    <button class="judul-akordion">misi apa yang harus diselesaikan? <span class="panah">▼</span></button>
+                    <div class="konten-akordion">
+                        <p>kamu harus menjelajahi seluruh petak coding ini dan mendaftarkan heromu di tab registrasi sebelah!</p>
+                    </div>
+                </div>
+                <div class="item-akordion">
+                    <button class="judul-akordion">apakah tema siang/malam kesimpen? <span class="panah">▼</span></button>
+                    <div class="konten-akordion">
+                        <p>yoii bener bgt! pilihan terakhir kamu bakal direkam sama localstorage browser biar pas di-refresh gak balik ke awal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="panel-registrasi" class="panel">
+            <div class="game-card" id="form-card">
+                <form id="formulir" novalidate>
+                    <div class="field">
+                        <label>nama hero (username)</label>
+                        <input id="nama" type="text" placeholder="minimal 3 karakter">
+                        <span class="pesan-error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label>surat sihir (email)</label>
+                        <input id="email" type="email" placeholder="hero@kerajaan.com">
+                        <span class="pesan-error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label>mantra sandi (password)</label>
+                        <input id="password" type="password" placeholder="minimal 6 karakter">
+                        <div class="bilah"><div class="isian"></div></div>
+                        <span id="strength-text">kekuatan: belum diisi</span>
+                        <span class="pesan-error"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">mulai petualangan ⚔️</button>
+                </form>
+                <div id="sukses" class="tersembunyi">✓ pendaftaran hero berhasil disetujui!</div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

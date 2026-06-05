@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #eef1f6; --text-color: #2b2d42; --card-bg: #ffffff;
+    --border-main: 4px solid #2b2d42; --box-shadow: 0 8px 0px #cbd5e1;
+    --accent: #ff477e; --mint: #2ec4b6;
+}
+[data-theme="dark"] {
+    --bg-color: #1a1a2e; --text-color: #f8f9fa; --card-bg: #16213e;
+    --border-main: 4px solid #f8f9fa; --box-shadow: 0 8px 0px #0f0f1a;
+    --accent: #ff006e; --mint: #00f5d4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Fredoka', sans-serif; transition: background-color 0.3s, color 0.3s; }
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; justify-content: center; align-items: center; height: 100vh; }
+
+.game-box { background: var(--card-bg); border: var(--border-main); border-radius: 24px; padding: 35px; width: 100%; max-width: 550px; box-shadow: var(--box-shadow); }
+.game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.game-header h1 { font-size: 1.4rem; }
+.game-desc { font-size: 0.85rem; opacity: 0.7; margin-bottom: 25px; font-weight: bold; color: var(--accent); }
+
+.game-btn { padding: 10px 20px; font-weight: 700; border: 3px solid #2b2d42; border-radius: 12px; background: #ffbe0b; cursor: pointer; box-shadow: 0 4px 0 #2b2d42; }
+[data-theme="dark"] .game-btn { border-color: #f8f9fa; box-shadow: 0 4px 0 #f8f9fa; }
+.game-btn:active { transform: translateY(4px); box-shadow: none; }
+
+.counter-grid { display: flex; gap: 20px; }
+.counter-card { background: var(--card-bg); border: var(--border-main); border-radius: 20px; padding: 25px; width: 100%; text-align: center; box-shadow: var(--box-shadow); }
+.counter-card:hover { transform: translateY(-5px); }
+.card-emoji { font-size: 2.5rem; display: block; margin-bottom: 5px; }
+.counter-card h3 { font-size: 0.9rem; opacity: 0.8; }
+.counter { font-size: 3rem; font-weight: 700; }
+.card-pink .counter { color: var(--accent); }
+.card-mint .counter { color: var(--mint); }

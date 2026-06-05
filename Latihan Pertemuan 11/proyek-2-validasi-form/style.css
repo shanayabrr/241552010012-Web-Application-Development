@@ -1,0 +1,41 @@
+/* Menggunakan style dasar yang sama dengan Proyek 1 agar sinkron */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+:root {
+    --bg-color: #eef1f6; --text-color: #2b2d42; --card-bg: #ffffff;
+    --border-main: 4px solid #2b2d42; --box-shadow: 0 8px 0px #cbd5e1;
+    --accent: #ff477e;
+}
+[data-theme="dark"] {
+    --bg-color: #1a1a2e; --text-color: #f8f9fa; --card-bg: #16213e;
+    --border-main: 4px solid #f8f9fa; --box-shadow: 0 8px 0px #0f0f1a;
+    --accent: #ff006e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Fredoka', sans-serif; }
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; justify-content: center; align-items: center; height: 100vh; padding: 20px; }
+
+.board-wrapper { width: 100%; max-width: 600px; }
+.game-header { display: flex; justify-content: space-between; align-items: center; }
+.game-header h1 { font-size: 1.3rem; }
+.game-desc { font-size: 0.85rem; opacity: 0.7; margin-bottom: 25px; font-weight: bold; color: var(--accent); }
+
+.game-btn { padding: 10px 20px; font-weight: 700; border: 3px solid #2b2d42; border-radius: 12px; background: #ffbe0b; cursor: pointer; box-shadow: 0 4px 0 #2b2d42; }
+[data-theme="dark"] .game-btn { border-color: #f8f9fa; box-shadow: 0 4px 0 #f8f9fa; }
+
+/* TAB GAMING */
+.board-path { display: flex; gap: 15px; margin-bottom: 20px; }
+.board-tile { background: var(--card-bg); border: var(--border-main); border-radius: 16px; padding: 15px; text-align: center; cursor: pointer; box-shadow: var(--box-shadow); width: 50%; }
+.board-tile.active { background: var(--accent); color: white; transform: translateY(-4px); box-shadow: 0 12px 0 var(--text-color); }
+.tile-number { font-weight: 700; font-size: 1.2rem; }
+.tile-label { font-size: 0.85rem; font-weight: bold; }
+
+.game-card { background: var(--card-bg); border: var(--border-main); border-radius: 24px; padding: 30px; box-shadow: var(--box-shadow); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ACCORDION */
+.accordion-item { border: 3px solid #2b2d42; border-radius: 12px; margin-bottom: 10px; overflow: hidden; background: var(--bg-color); }
+[data-theme="dark"] .accordion-item { border-color: #f8f9fa; }
+.accordion-header { width: 100%; padding: 12px; background: none; border: none; text-align: left; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; justify-content: space-between; color: var(--text-color); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.3s; background: var(--card-bg); }
+.accordion-body p { padding: 12px; font-size: 0.85rem; }
+.accordion-item.open .accordion-body { max-height: 100px; }

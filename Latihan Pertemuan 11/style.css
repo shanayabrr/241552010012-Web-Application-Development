@@ -1,0 +1,106 @@
+/* ngambil font tulisan bulet gembul biar kesannya lucu kek game pop art */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+
+/* settingan dasar warna pas mode terang/siang */
+:root {
+    --bg: #eef1f6;
+    --teks: #2b2d42;
+    --kartu: #ffffff;
+    --border-main: 4px solid #2b2d42;
+    --box-shadow: 0 8px 0px #cbd5e1;
+    --accent: #ff477e;
+    --success: #38b000;
+    --error: #ff595e;
+}
+
+/* settingan otomatis berubah warna pas kelas .gelap dipasang di body */
+.gelap {
+    --bg: #1a1a2e;
+    --teks: #f8f9fa;
+    --kartu: #16213e;
+    --border-main: 4px solid #f8f9fa;
+    --box-shadow: 0 8px 0px #0f0f1a;
+    --accent: #ff006e;
+    --success: #00f5d4;
+    --error: #ff4d6d;
+}
+
+/* reset margin bawaan browser asli */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Fredoka', sans-serif; 
+}
+
+/* bikin tampilan website pas di tengah-tengah layar laptop */
+body { 
+    background: var(--bg); 
+    color: var(--teks); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 20px;
+    transition: background 0.4s ease, color 0.4s ease; /* biar pas ganti tema transisinya halus */
+}
+
+.board-wrapper { width: 100%; max-width: 550px; }
+.game-header { display: flex; justify-content: space-between; align-items: center; }
+.game-desc { font-size: 0.85rem; opacity: 0.7; margin-bottom: 25px; font-weight: bold; color: var(--accent); }
+
+/* desain tombol kaku 3d retro biar kek mainan papan kayu */
+.game-btn { padding: 10px 20px; font-weight: 700; border: var(--border-main); border-radius: 12px; background: #ffbe0b; cursor: pointer; box-shadow: 0 4px 0 var(--teks); }
+.game-btn:active { transform: translateY(4px); box-shadow: none; } /* pas diklik tombolnya mendem kebawah */
+
+/* desain menu tab navigation */
+.tab-nav { display: flex; gap: 10px; margin-bottom: 20px; }
+.tombol-tab { flex: 1; padding: 12px; font-weight: 700; background: var(--kartu); border: var(--border-main); border-radius: 12px; color: var(--teks); cursor: pointer; box-shadow: var(--box-shadow); }
+.tombol-tab.aktif { background: var(--accent); color: #fff; transform: translateY(-4px); box-shadow: 0 12px 0 var(--teks); }
+
+/* sembunyiin panel bawaan asli, ntar diidupin pake javascript */
+.panel { display: none; }
+.panel.aktif { display: block; animation: nongolEfek 0.4s ease; }
+
+/* susunan layout kotak dashboard statistik angka putar */
+.grid-statistik { display: flex; gap: 15px; }
+.kartu-stat { flex: 1; background: var(--kartu); border: var(--border-main); border-radius: 20px; padding: 20px; text-align: center; box-shadow: var(--box-shadow); }
+.kartu-stat .emoji { font-size: 2rem; display: block; margin-bottom: 5px; }
+.kartu-stat h3 { font-size: 2.5rem; color: var(--accent); }
+
+/* desain laci lipat accordion */
+.item-akordion { border: var(--border-main); border-radius: 12px; margin-bottom: 10px; overflow: hidden; background: var(--kartu); box-shadow: var(--box-shadow); }
+.judul-akordion { width: 100%; padding: 15px; background: none; border: none; text-align: left; font-weight: 700; font-size: 0.95rem; cursor: pointer; display: flex; justify-content: space-between; color: var(--teks); }
+.konten-akordion { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: var(--bg); }
+.konten-akordion p { padding: 15px; font-size: 0.85rem; line-height: 1.5; }
+.item-akordion.terbuka .konten-akordion { max-height: 200px; } /* trik cs buat ngebuka tinggi laci pas kelas aktif nempel */
+.item-akordion.terbuka .panah { transform: rotate(180deg); }
+
+/* desain bagian isian form registrasi */
+.game-card { background: var(--kartu); border: var(--border-main); border-radius: 24px; padding: 25px; box-shadow: var(--box-shadow); }
+.field { margin-bottom: 15px; position: relative; }
+.field label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 5px; }
+.field input { width: 100%; padding: 10px 15px; border: 3px solid #2b2d42; border-radius: 12px; font-weight: bold; background: var(--bg); color: var(--teks); outline: none; }
+
+/* umpan balik visual pas ketikan bener/salah (nyala ijo atau merah) */
+.field input.valid { border-color: var(--success); }
+.field input.invalid { border-color: var(--error); }
+.pesan-error { color: var(--error); font-size: 0.75rem; font-weight: bold; display: block; margin-top: 4px; min-height: 15px; }
+
+/* nyusun bar nyawa sandi (strength bar password) */
+.bilah { height: 6px; background: #e2e8f0; border: 2px solid var(--teks); border-radius: 4px; margin-top: 6px; overflow: hidden; }
+.isian { height: 100%; width: 0%; transition: width 0.3s, background 0.3s; }
+#strength-text { font-size: 0.75rem; font-weight: bold; display: block; margin-top: 4px; }
+
+/* tombol gede buat kirim data form */
+.submit-btn { width: 100%; padding: 12px; background: var(--accent); color: white; font-weight: 700; border: var(--border-main); border-radius: 12px; cursor: pointer; box-shadow: 0 5px 0 var(--teks); }
+.submit-btn:active { transform: translateY(5px); box-shadow: none; }
+
+/* kotak pemberitahuan pas registrasi beres */
+#sukses { background: var(--success); color: white; padding: 15px; border-radius: 12px; text-align: center; font-weight: bold; margin-top: 15px; }
+.tersembunyi { display: none !important; }
+
+/* animasi tambahan biar web-nya gerak interaktif */
+@keyframes nongolEfek { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes guncang { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+.shake { animation: guncang 0.3s ease-in-out; } /* dipicu pas gagal submit form */

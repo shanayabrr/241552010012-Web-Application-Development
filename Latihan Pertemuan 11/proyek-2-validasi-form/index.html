@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Board - Proyek 2: Peta Petualangan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="board-wrapper">
+        <header class="game-header">
+            <h1>🗺️ PETA LINTASAN PETUALANGAN</h1>
+            <button id="theme-toggle" class="game-btn">SIANG ☀️</button>
+        </header>
+        <p class="game-desc">Proyek 2: Integrasi Komponen UI Tab Berbentuk Langkah & Accordion Lipat.</p>
+
+        <div class="board-path">
+            <div class="board-tile tile-tab active" data-tab="tab-info">
+                <div class="tile-number">1</div>
+                <div class="tile-label">Misi Utama</div>
+            </div>
+            <div class="board-tile tile-tab" data-tab="tab-faq">
+                <div class="tile-number">2</div>
+                <div class="tile-label">Kitab FAQ</div>
+            </div>
+        </div>
+
+        <main class="game-card">
+            <div id="tab-info" class="tab-content active">
+                <h2>⚔️ MISI UTAMA: MENJELAJAHI DUNIA</h2>
+                <p style="margin-top: 10px;">Kamu sedang berada di Petak 1. Selamat berjuang melatih kodemu sampai tingkat legendaris!</p>
+            </div>
+
+            <div id="tab-faq" class="tab-content">
+                <h2>📜 KITAB WAWASAN (ACCORDION)</h2>
+                <div class="accordion-container" style="margin-top: 15px;">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Misi apa ini? <span class="arrow">▼</span></button>
+                        <div class="accordion-body"><p>Ini adalah komponen Accordion dinamis yang dibuat khusus menggunakan Javascript murni.</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Bagaimana cara ganti tab? <span class="arrow">▼</span></button>
+                        <div class="accordion-body"><p>Cukup klik petak angka 1 atau 2 di atas untuk memindahkan token karakter heromu!</p></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

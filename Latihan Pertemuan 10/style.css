@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #1e1e2f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.app {
+  width: 400px;
+  background: #2b2b40;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#add {
+  background: #3498db;
+  color: white;
+}
+
+li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  background: #28283c;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+li span {
+  flex: 1;
+}
+
+li.done span {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.btn-done {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn-del {
+  background: #ff556a;
+  color: white;
+}
